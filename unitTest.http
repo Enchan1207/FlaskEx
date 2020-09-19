@@ -1,0 +1,18 @@
+### variables
+@hostName = localhost
+@flaskPort = 5000
+@host = http://{{hostName}}:{{flaskPort}}
+
+### TaskList
+GET {{host}}/ HTTP/1.1
+
+### Add Task
+PUT {{host}}/new HTTP/1.1
+content-Type: application/json
+
+{
+    "title": "Dummy",
+    "content": "WTF",
+    "limit": "86400"
+}
+
