@@ -3,16 +3,31 @@
 @flaskPort = 5000
 @host = http://{{hostName}}:{{flaskPort}}
 
+@taskID = 8d38e619-cd65-4e08-9ac9-dc43bba3c9ed
+
 ### TaskList
 GET {{host}}/ HTTP/1.1
 
 ### Add Task
-PUT {{host}}/new HTTP/1.1
-content-Type: application/json
+PUT {{host}}/create HTTP/1.1
+Content-Type: application/json
 
 {
     "title": "Dummy",
     "content": "WTF",
-    "limit": "86400"
+    "limit": 86400.0
 }
 
+### Modify Task
+PUT {{host}}/update/{{taskID}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Dummy!!"
+}
+
+### Get Task
+GET {{host}}/get/{{taskID}} HTTP/1.1
+
+### Remove Task
+DELETE  {{host}}/delete/{{taskID}} HTTP/1.1
