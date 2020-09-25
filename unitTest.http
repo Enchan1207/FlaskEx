@@ -1,9 +1,13 @@
+#
+# unit test for REST_Client (vscode ext.)
+#
+
 ### variables
 @hostName = localhost
 @flaskPort = 5000
 @host = http://{{hostName}}:{{flaskPort}}
 
-@taskID = 8d38e619-cd65-4e08-9ac9-dc43bba3c9ed
+@taskID = DUMMY_ID
 
 ### TaskList
 GET {{host}}/ HTTP/1.1

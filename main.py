@@ -66,8 +66,17 @@ def updateTask(taskID = None):
 # Delete
 @app.route('/delete/<string:taskID>', methods = ['DELETE'])
 def deleteTask(taskID = None):
+    isDeleted = False
+    for i in range(len(tasks)):
+        if tasks[i].taskID == taskID:
+            del tasks[i]
+            isDeleted = True
+            break
 
-    return make_response(jsonify({'result': "Deleted."}), 200)
+    if isDeleted:
+        return make_response(jsonify({'result': "Deleted."}), 200)
+    else:
+        return make_response(jsonify({'result': "Invalid parameter."}), 400)
 
 if __name__ == "__main__":
 
