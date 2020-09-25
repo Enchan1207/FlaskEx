@@ -1,5 +1,6 @@
 #
 # Flaskを使ってみる
+# 2020 @Enchan1207.
 #
 from flask import Flask, render_template, request, make_response, jsonify
 from datetime import datetime

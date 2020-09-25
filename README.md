@@ -2,4 +2,4 @@
 
 ## OverView
 
-Simply Flask Example.
+Simple task-manager example written by Flask.
